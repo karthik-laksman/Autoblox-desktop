@@ -1,9 +1,9 @@
 {
-  "name": "openblock-desktop",
-  "productName": "OpenBlockDesktop",
-  "description": "OpenBlock as a self-contained desktop application",
-  "author": "Openblock.cc Team <contact@openblock.cc> (http://www.openblock.cc/)",
-  "version": "2.6.3",
+  "name": "autoblox-desktop",
+  "productName": "AutobloxDesktop",
+  "description": "Autoblox - Graphic programming software for Arduino, ESP32, micro:bit and more",
+  "author": "Karthik Laksman <your@email.com> (https://github.com/karthik-laksman)",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
@@ -21,6 +21,7 @@
     "build": "npm run build:dev",
     "build:dev": "npm run compile && npm run doBuild -- --mode=dev",
     "build:dir": "npm run compile && npm run doBuild -- --mode=dir",
+    "build:fast": "npm run compile && npm run doBuild -- --mode=dir --x64",
     "build:dist": "npm run compile && npm run doBuild -- --mode=dist",
     "build:publish": "npm run compile && npm run doBuild -- --mode=publish",
     "doBuild": "node ./scripts/electron-builder-wrapper.js",
@@ -31,11 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/openblockcc/openblock-desktop.git"
+    "url": "git+ssh://git@github.com/karthik-laksman/Autoblox-desktop.git"
   },
   "dependencies": {
+    "balanced-match": "^1.0.2",
+    "brace-expansion": "^1.1.11",
     "bytes": "^3.1.2",
-    "openblock-link": "^0.2.0-prerelease.20250608112023",
+    "face-api.js": "^0.22.2",
+    "openblock-link": "github:karthik-laksman/openblock-link#main",
     "openblock-resource": "^0.2.0-prerelease.20250302101433",
     "source-map-support": "^0.5.19"
   },
@@ -82,7 +86,7 @@
     "monaco-editor-webpack-plugin": "^1.7.0",
     "nets": "^3.2.0",
     "node-abort-controller": "^3.0.1",
-    "openblock-gui": "github:openblockcc/openblock-gui#openblock-desktop-v2.6.3",
+    "openblock-gui": "github:karthik-laksman/openblock-gui#main",
     "openblock-l10n": "^3.15.20250608130541",
     "openblock-parse-release-message": "0.0.4",
     "postcss-import": "^12.0.1",

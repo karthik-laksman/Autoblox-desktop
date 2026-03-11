@@ -1,19 +1,23 @@
 directories:
   buildResources: buildResources
   output: dist
-extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
+# For production build, use this:
+# extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
 
-appId: openblock.cc.openblock-desktop
-productName: "OpenBlockDesktop"
+# For development build (faster):
+extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "external-resources", "drivers"]
+
+appId: betatech.autoblox-desktop
+productName: "AutobloxDesktop"
 publish:
   - provider: github
-artifactName: "OpenBlock-Desktop_v${version}_${os}_${arch}.${ext}"
+artifactName: "Autoblox-Desktop_v${version}_${os}_${arch}.${ext}"
 
 fileAssociations:
-  ext: ob
-  name: OpenBlock project file
+  ext: ab
+  name: Autoblox project file
   role: Editor
-  icon: buildResources/OpenBlockFile.ico
+  icon: buildResources/AutobloxFile.ico
 
 compression: maximum
 
@@ -27,13 +31,13 @@ mac:
         This app requires microphone access when recording sounds or detecting loudness.
   gatekeeperAssess: true
   hardenedRuntime: true
-  icon: buildResources/OpenBlockDesktop.icns
+  icon: buildResources/AutobloxDesktop.icns
   provisioningProfile: embedded.provisionprofile
   target:
     - dmg
     # - mas
 dmg:
-  title: "OpenBlock-Desktop_${version}"
+  title: "Autoblox-Desktop_${version}"
   format: UDRO
 # mas:
 #   category: public.app-category.education
@@ -46,7 +50,7 @@ dmg:
 #   provisioningProfile: mas-dev.provisionprofile
 
 win:
-  icon: buildResources/OpenBlockDesktop.ico
+  icon: buildResources/AutobloxDesktop.ico
   target:
     # - appx
     - nsis
@@ -67,8 +71,8 @@ linux:
   desktop:
     entry:
       Encoding: UTF-8
-      Name: OpenBlockDesktop
-      Icon: openblock-desktop
+      Name: AutobloxDesktop
+      Icon: autoblox-desktop
       Type: Application
       Terminal: false
   target:
