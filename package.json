@@ -22,6 +22,7 @@
     "build:dev": "npm run compile && npm run doBuild -- --mode=dev",
     "build:dir": "npm run compile && npm run doBuild -- --mode=dir",
     "build:fast": "npm run compile && npm run doBuild -- --mode=dir --x64",
+    
     "build:dist": "npm run compile && npm run doBuild -- --mode=dist",
     "build:publish": "npm run compile && npm run doBuild -- --mode=publish",
     "doBuild": "node ./scripts/electron-builder-wrapper.js",

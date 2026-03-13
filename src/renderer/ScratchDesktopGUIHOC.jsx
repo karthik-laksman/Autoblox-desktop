@@ -121,7 +121,7 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
         handleClickLicense () {
             ipcRenderer.send('open-license-window');
         }
-        handleClickCheckUpdate () {
+     /*   handleClickCheckUpdate () {
             ipcRenderer.send('reqeustCheckUpdate');
         }
         handleClickUpdate () {
@@ -129,7 +129,7 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
         }
         handleAbortUpdate () {
             ipcRenderer.send('abortUpdate');
-        }
+        }*/
         handleClickClearCache () {
             ipcRenderer.send('clearCache');
         }
@@ -211,19 +211,21 @@ const ScratchDesktopGUIHOC = function (WrappedComponent) {
                         />),
                         onClick: () => showPrivacyPolicy()
                     },
-                    {
+                  /*  {
                         title: (<FormattedMessage
                             defaultMessage="Data settings"
                             description="Menu bar item for data settings"
                             id="gui.menuBar.dataSettings"
                         />),
                         onClick: () => this.props.onTelemetrySettingsClicked()
-                    }
+                    }*/
                 ]}
                 onClickLogo={this.handleClickLogo}
-                onClickCheckUpdate={this.handleClickCheckUpdate}
+                showCheckUpdate={false}   // make this true for check update menu item show in setting menu
+                wikiUrl="https://www.betatech.in/" // change this to your desired wiki/online docs URL
+               /* onClickCheckUpdate={this.handleClickCheckUpdate}
                 onClickUpdate={this.handleClickUpdate}
-                onAbortUpdate={this.handleAbortUpdate}
+                onAbortUpdate={this.handleAbortUpdate}*/
                 onClickInstallDriver={this.handleClickInstallDriver}
                 onClickClearCache={this.handleClickClearCache}
                 onProjectTelemetryEvent={this.handleProjectTelemetryEvent}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {productName} from '../../package.json';
 
-import logo from '../icon/OpenBlockLoading.svg';
+import logo from '../icon/autoblox_256x256.png';
 import styles from './loading.css';
 
 const LoadingElement = () => (
